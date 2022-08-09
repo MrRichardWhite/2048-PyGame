@@ -685,6 +685,8 @@ def setup(screen, player=None, board=None):
                     return play(screen, Player(text_box_player.text_string),
                                 dimension=buttons_dimension.member_clicked_index+3, skin=buttons_skin.member_clicked.text_string)
                 else:
+                    board.skin = buttons_skin.member_clicked.text_string
+                    board.update()
                     return play(screen, Player(text_box_player.text_string),
                                 board=board)
 

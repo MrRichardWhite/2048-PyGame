@@ -264,6 +264,13 @@ class Board(Labels):
 
         return tiles_moving_info
 
+    def update(self, event=None):
+
+        for i, tile in enumerate(self.tiles):
+            self.tiles[i] = Tile(tile.surface, tile.name, id=tile.id, skin=self.skin)
+
+        if event is not None: super().update(event)
+
 class Player(object):
 
     def __init__(self, name):
